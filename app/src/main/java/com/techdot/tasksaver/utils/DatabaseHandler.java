@@ -86,4 +86,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         return tasksList;
     }
+
+    public void updateTask(int id, String task) {
+        ContentValues cv = new ContentValues();  // Create content value to pass to db.update
+        cv.put(TASK, task); // Put the value of task in TASK column
+        //Update the table at location whose id is passed to the function
+        db.update(TO_DO_TABLE, cv, ID + "=?", new String[] {String.valueOf(id)});
+    }
 }
