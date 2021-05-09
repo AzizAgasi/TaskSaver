@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         fab = findViewById(R.id.fab);
 
         tasksList = new ArrayList<>();
-        adapter = new TodoAdapter(this);
+        adapter = new TodoAdapter(db, this);
         todoRecyclerView = findViewById(R.id.tasksRecyclerView);
         todoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         todoRecyclerView.setAdapter(adapter);

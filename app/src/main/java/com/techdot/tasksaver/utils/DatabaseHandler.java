@@ -93,4 +93,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //Update the table at location whose id is passed to the function
         db.update(TO_DO_TABLE, cv, ID + "=?", new String[] {String.valueOf(id)});
     }
+
+    public void updateStatus(int id, int status) {
+        ContentValues cv = new ContentValues(); // Create content value to pass to db.update
+        cv.put(STATUS, status); // Put the status of the task in the content provider
+        // Update the check status at the position whose ID is passed to the function
+        db.update(TO_DO_TABLE, cv, ID + "=?", new String[] {String.valueOf(id)});
+    }
+
+    public void deleteTask(int id) {
+        db.delete(TO_DO_TABLE, ID + "=?", new String[] {String.valueOf(id)});
+    }
 }
