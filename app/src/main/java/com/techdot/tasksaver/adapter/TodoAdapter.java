@@ -1,5 +1,6 @@
 package com.techdot.tasksaver.adapter;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,10 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
     public TodoAdapter(DatabaseHandler db, MainActivity activity) {
         this.db = db;
         this.activity = activity;
+    }
+
+    public Activity getContext() {
+        return activity;
     }
 
     @NonNull

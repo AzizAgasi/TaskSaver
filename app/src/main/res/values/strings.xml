@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Task Saver</string>
+    <string name="app_name">SaveIt</string>
     <string name="tasks">Your Tasks:-</string>
     <string name="save">Save</string>
     <string name="new_task">New Task</string>

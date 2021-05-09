@@ -1,6 +1,7 @@
 package com.techdot.tasksaver;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,11 +38,15 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
 
         fab = findViewById(R.id.fab);
 
+
         tasksList = new ArrayList<>();
         adapter = new TodoAdapter(db, this);
         todoRecyclerView = findViewById(R.id.tasksRecyclerView);
         todoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         todoRecyclerView.setAdapter(adapter);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(adapter));
+        itemTouchHelper.attachToRecyclerView(todoRecyclerView);
 
         tasksList = db.getAllTasks();   //Get all the tasks in the database in the arrayList created
         Collections.reverse(tasksList); // Reverse the order of the arrayList containing the tasks

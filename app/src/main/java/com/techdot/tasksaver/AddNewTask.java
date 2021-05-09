@@ -70,7 +70,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
             /* Check if the length of the task is greater than 0 i.e whether a text exists in edit text
             * if true then change the color of the save button from darker gray to white */
             if (task.length() > 0) {
-                mSaveButton.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
+                mSaveButton.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
             }
         }
         // Add text change listener for the edit text
